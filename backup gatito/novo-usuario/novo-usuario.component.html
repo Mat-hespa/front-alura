@@ -1,0 +1,101 @@
+<div class="container" style="border: 1px solid rgb(131, 131, 131)">
+
+
+  <form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+    <h4 class="register">Register</h4>
+    <div class="form-group">
+      <input
+        class="form-control"
+        placeholder="E-mail"
+        formControlName="email"
+      />
+      <app-mensagem
+        *ngIf="novoUsuarioForm.get('email')?.errors?.['required'] && novoUsuarioForm.get('email')?.touched"
+        mensagem="Email obrigatorio!"
+      >
+      </app-mensagem>
+
+      <app-mensagem
+        *ngIf="novoUsuarioForm.get('email')?.errors?.['email'] && novoUsuarioForm.get('email')?.touched"
+        mensagem="Email inválido!"
+      >
+      </app-mensagem>
+
+    </div>
+
+    <div class="form mt-4">
+      <input
+        class="form-control"
+        placeholder="Full name"
+        formControlName="fullName"
+      />
+
+      <app-mensagem
+        *ngIf="novoUsuarioForm.get('fullName')?.errors && novoUsuarioForm.get('fullName')?.touched"
+        mensagem="Nome inválido!"
+      >
+      </app-mensagem>
+    </div>
+
+    <div class="form mt-4">
+      <input
+        class="form-control"
+        placeholder="Username"
+        formControlName="userName"
+      />
+
+      <!-- <app-mensagem
+        *ngIf="novoUsuarioForm.get('userName')?.errors?.['minusculoValidator'] && novoUsuarioForm.get('userName')?.touched"
+        mensagem="Somente minusculo!"
+      >
+      </app-mensagem> -->
+
+      <app-mensagem
+        *ngIf="novoUsuarioForm.get('userName')?.errors && novoUsuarioForm.get('userName')?.touched"
+        mensagem="Ultilize somente minusculo!"
+      >
+      </app-mensagem>
+    </div>
+
+    <div class="form mt-4">
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        formControlName="password"
+      />
+
+      <app-mensagem
+        *ngIf="novoUsuarioForm.get('password')?.errors?.['required'] && novoUsuarioForm.get('password')?.touched"
+        mensagem="Senha obrigatória!"
+      >
+      </app-mensagem>
+
+      <!-- <app-mensagem
+        *ngIf="novoUsuarioForm.errors?.['senhaIgualUsuario']"
+        mensagem="Senha igual ao usuario!"
+      >
+      </app-mensagem> -->
+    </div>
+
+    <div class="cima">
+      <div class="form mt-4">
+        <div
+          class="btn-toolbar justify-content-between"
+          role="toolbar"
+          aria-label="Toolbar with button groups"
+        >
+          <button type="submit" class="btn btn-primary btn-block">
+            Register
+          </button>
+          <div class="input-group">
+            <p>
+              Already registred?
+              <a [routerLink]="['']" class="text-decoration-none">Login</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

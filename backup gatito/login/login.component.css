@@ -1,0 +1,27 @@
+.login{
+  font-size: 35px;
+  text-align: center;
+  color: white;
+  padding-bottom: 10px;
+}
+
+
+.container{
+  display: flex;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px #333;
+}
+
+p{
+  color: white;
+}
+
+.btn-toolbar{
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.input-group{
+  padding-left: 20px;
+}
